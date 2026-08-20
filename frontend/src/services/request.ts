@@ -1,9 +1,10 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { message } from 'antd';
 import { history } from 'umi';
+import { apiBase } from '@/utils/apiBase';
 
 const request: AxiosInstance = axios.create({
-  baseURL: '/api/v1',
+  baseURL: `${apiBase}/api/v1`,
   timeout: 30000,
 });
 

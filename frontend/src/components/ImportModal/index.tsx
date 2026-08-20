@@ -4,6 +4,7 @@ import { UploadOutlined, DownloadOutlined, CheckCircleOutlined, CloseCircleOutli
 import type { UploadProps } from 'antd';
 import { request } from '@/services/request';
 import { createSseInstance, SseInstance } from '@/services/sse';
+import { apiBase } from '@/utils/apiBase';
 
 const { Text, Link } = Typography;
 
@@ -49,7 +50,7 @@ const ImportModal: React.FC<ImportModalProps> = ({
   };
 
   const handleDownloadTemplate = () => {
-    const url = getTemplateUrl();
+    const url = `${apiBase}${getTemplateUrl()}`;
     const link = document.createElement('a');
     link.href = url;
     link.download = `${importType}_template.xlsx`;

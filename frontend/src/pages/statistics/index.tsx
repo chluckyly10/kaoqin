@@ -252,7 +252,8 @@ const StatisticsPage: React.FC = () => {
 
   const handleDownloadTask = (task: TaskItem) => {
     if (task.fileName) {
-      window.open(task.fileName, '_blank');
+      const url = task.fileName.startsWith('http') ? task.fileName : `${apiBase}${task.fileName}`;
+      window.open(url, '_blank');
     }
   };
 
@@ -722,7 +723,7 @@ const StatisticsPage: React.FC = () => {
               <Button
                 type="primary"
                 icon={<DownloadOutlined />}
-                href={reportDownloadUrl}
+                href={reportDownloadUrl.startsWith('http') ? reportDownloadUrl : `${apiBase}${reportDownloadUrl}`}
                 target="_blank"
                 style={{ marginTop: 16 }}
               >

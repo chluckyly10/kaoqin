@@ -4,6 +4,7 @@ import { DownloadOutlined, FileExcelOutlined, ClockCircleOutlined, CheckCircleOu
 import dayjs from 'dayjs';
 import { request } from '@/services/request';
 import { createSseInstance, SseInstance } from '@/services/sse';
+import { apiBase } from '@/utils/apiBase';
 
 const { Text } = Typography;
 const { RangePicker } = DatePicker;
@@ -84,7 +85,7 @@ const ExportModal: React.FC<ExportModalProps> = ({
       };
       setCurrentTask(task);
 
-      const sseUrl = `/task/sse/${taskId}`;
+      const sseUrl = `${apiBase}/api/v1/task/sse/${taskId}`;
       const sse = createSseInstance(sseUrl);
       sseRef.current = sse;
 
@@ -126,8 +127,10 @@ const ExportModal: React.FC<ExportModalProps> = ({
   };
 
   const handleDownload = (url: string) => {
+    // 后端返回的可能是相对路径（/exports/xxx.xlsx），拼接 apiBase
+    const fullUrl = url.startsWith('http') ? url : `${apiBase}${url}`;
     const link = document.createElement('a');
-    link.href = url;
+    link.href = fullUrl;
     link.download = `${exportType}_export_${dayjs().format('YYYYMMDD')}.xlsx`;
     link.click();
   };
