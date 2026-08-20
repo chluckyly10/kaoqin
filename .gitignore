@@ -1,0 +1,23 @@
+node_modules/
+.env
+keys/
+uploads/
+exports/
+*.log
+
+# 前端生成文件（通配符匹配所有层级）
+**/.umi/
+**/.umi-production/
+frontend/dist/
+
+# 废弃的微前端基座应用（不再使用）
+frontend/base-main/
+
+# 临时测试脚本
+test-*.js
+*_hash.js
+gen_hash.js
+get_hash.js
+get_db_hash.js
+fix_passwords.js
+check_hash.js

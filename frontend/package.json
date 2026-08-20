@@ -1,0 +1,27 @@
+{
+  "name": "kaoqin-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "preview": "umi preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@ant-design/pro-components": "^2.6.64",
+    "@umijs/max": "^4.2.18",
+    "@umijs/plugin-qiankun": "^2.44.1",
+    "antd": "^5.17.2",
+    "axios": "^1.7.2",
+    "dayjs": "^1.11.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.4.5"
+  }
+}

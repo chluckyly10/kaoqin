@@ -1,0 +1,1 @@
+UPDATE sys_employee SET password = '$2a$10$ICeV7rXrrv.UGRQ1/Bt2/Ou0U8cK8f6lkU7dNhjwYZtTN8UkF33iG' WHERE id = 1;
